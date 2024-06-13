@@ -1,0 +1,48 @@
+<div class="row-self">
+    <div class="setting card">
+  
+            <div class="half">
+                <span class="nav-self" [ngClass]="{ 'active': isUserSetting }" (click)="userSetting()" >User</span>
+                <span class="nav-self" [ngClass]="{ 'active': isSmsSend }" (click)="sendSms()">Lottery</span>
+            </div>
+            <div class="content-body">
+               
+                <div *ngIf="isUserSetting">
+                    <div class="container mt-5">
+                        <div class="card">
+                          <h5 class="card-header bg-primary text-white">Commession</h5>
+                          <div class="card-body">
+                            <form (ngSubmit)="onSubmit()">
+                              <div class="form-group">
+                                <label for="luckyNumber">Choose a User</label>
+                                <select class="form-control" id="luckyNumber" name="luckyNumber" required  (change)="onSelectUser()">
+                                  <option value=""  >Select User</option>
+                                  <option value=""  >Distributor</option>
+                                  <option value=""  >User</option>
+                                  
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label for="name">Enter Your Name</label>
+                                <input type="text" class="form-control" id="name"  name="name" required>
+                              </div>
+                              <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div *ngIf="isSmsSend">
+                    
+                      
+                </div>
+                
+              
+            </div>
+   
+    </div>
+    <div class="body-main">
+       
+       
+    </div>
+</div>

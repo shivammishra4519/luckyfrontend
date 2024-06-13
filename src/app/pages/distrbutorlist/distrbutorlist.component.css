@@ -1,0 +1,27 @@
+/* user-table.component.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    text-align: left;
+    border: 1px solid #dddddd; /* Add a border around the table */
+  }
+  th, td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd; /* Add a border around table cells */
+  }
+  thead tr {
+    background-color: #009879;
+    color: #ffffff;
+  }
+  tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  

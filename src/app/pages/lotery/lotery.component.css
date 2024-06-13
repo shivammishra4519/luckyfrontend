@@ -1,0 +1,98 @@
+.row-self {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.width-40 {
+    width: 35%;
+
+    border: 1px solid grey;
+    height: 94vh;
+}
+
+.width-60 {
+    width: 65%;
+
+    border: 1px solid rgb(112, 54, 54);
+    height: 94vh;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    padding: 2px 7px;
+}
+
+ul li {
+    width: 49%;
+    border: 1px solid red;
+    list-style: none;
+    display: inline-block;
+    padding: 0px 20px;
+}
+.card{
+    padding: 10px 40px;
+}
+
+
+.table-container {
+  padding: 20px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.lottery-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+.lottery-table th, .lottery-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.lottery-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.lottery-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.lottery-table ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lottery-table ul li {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 3px 6px;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+}
+
+@media (max-width: 767px) {
+  .row-self{
+    flex-wrap: wrap;
+  }
+  .width-40{
+    width: 100%;
+  }
+  .width-60{
+    width: 100%;
+  }
+}
+
+
+
+

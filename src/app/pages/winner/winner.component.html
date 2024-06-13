@@ -1,0 +1,32 @@
+<!-- lottery.component.html -->
+<div class="container mt-5">
+    <h2>Lottery Details</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+         
+          <th>Lottery Name</th>
+          <th>Total Lucky Number</th>
+          <th>Winning Return</th>
+          <th>Sedule Time</th>
+          <th>Winner</th>
+        
+          <th>Time Duration</th>
+          <th>Lottery Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lottery of lotteries">
+        
+          <td>{{ lottery.lotteryName }}</td>
+          <td>{{ lottery.totalLuckyNumber }}</td>
+          <td>{{ lottery.winingReturn }}</td>
+          <td>{{ lottery.hours }}:00{{ lottery.period }}</td>
+          <td>{{ lottery.luckyNumber }}</td>
+          <td>{{ lottery.timeDuration }}</td>
+          <td>{{ lottery.date.date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

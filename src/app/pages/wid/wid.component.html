@@ -1,0 +1,36 @@
+<div class="container" style="margin-top: 45px;">
+  <div *ngFor="let lottery of currentLottery">
+    <div class="marquee">
+      <div class="marquee-content">
+        This is a scrolling text example using CSS animations. You can add more content here as needed.
+      </div>
+    </div>
+    
+    <div class="card">
+      <h1 style="text-align: center; color: green;">{{ lottery.lotteryName }}</h1>
+      <div class="item-1">
+        <div class="item"
+             [ngClass]="{
+               'odd': i % 2 === 0,
+               'even': i % 2 !== 0,
+               'third': i % 3 === 0,
+               'fourth': i % 4 === 0,
+               'selected': isSelected(lucky, lottery)
+             }"
+             *ngFor="let lucky of lottery.arrayLuckyNumber; let i = index"
+             (click)="onItemClick(lucky, lottery)">
+          {{ lucky }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="selectedItems">
+    <div class="col-md-8">
+      <input type="number" class="form-control" id="inputField" placeholder="Enter Amount" min="0"  [(ngModel)]="amount">
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-primary" id="submitButton" (click)="submit()">Submit</button>
+    </div>
+  </div>
+</div>

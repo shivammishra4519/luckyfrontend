@@ -1,0 +1,23 @@
+<div class="table-container">
+    <table class="lottery-table">
+      <thead>
+        <tr>
+          <th>Lottery</th>
+          <th>Lottery Name</th>
+          <th>Total Amount</th>
+          
+          <th>Total Investments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data">
+          <td (click)="naviagte(item.lotteryId)" style="cursor: pointer;">{{ item.lotteryId }}</td>
+          <td>{{ item.lotteryName }}</td>
+          <td>{{ item.totalAmount }}</td>
+          
+          <td>{{ item.totalInvestments }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,23 @@
+<div class="table-container">
+    <table class="investment-table">
+      <thead>
+        <tr>
+          <th>Lucky Number</th>
+          <th>Total Investment</th>
+          <th>Total Number of Investments</th>
+          <th>Total Return</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of investmentSummary">
+          <td>{{ item.luckyNumber }}</td>
+          <td>{{ item.totalInvestment }}</td>
+          <td>{{ item.totalNumberInvestments }}</td>
+          <td>{{winingReturn*item.totalInvestment}}</td>
+          <td><button class="btn btn-success" (click)="winner(item)">Win</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

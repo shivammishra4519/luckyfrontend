@@ -1,0 +1,86 @@
+<div class="row-self">
+  <div class="width-40">
+    <div class="header">
+
+      <div class="card">
+        <form style="width: 22rem;" [formGroup]="lotteryDeatils">
+          <!-- Name input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form5Example1">Lottery Name</label>
+            <input type="text" id="form5Example1" name="lotteryName" class="form-control"
+              style="text-transform: uppercase;" formControlName="lotteryName" />
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form5Example1">Total lucky Numbers</label>
+            <input type="number" id="form5Example1" name="lotteryName" class="form-control"
+              formControlName="totalLuckyNumber" />
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form5Example1">Wining Return</label>
+            <input type="number" id="form5Example1" name="lotteryName" class="form-control"
+              formControlName="winingReturn" />
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label class="form-label" for="form5Example1">Hours</label>
+              <input type="number" id="form5Example1" name="lotteryName" class="form-control"
+                formControlName="hours" min="0" max="12" />
+            </div>
+            <div class="col-md-4">
+              <label class="form-label" for="form5Example1">Minutes</label>
+              <input type="number" id="form5Example1" name="lotteryName" class="form-control"
+                formControlName="minutes" min="0" max="59"  />
+            </div>
+            <div class="col-md-4">
+              <label for="" style="margin-bottom: 6px;">Select Period</label>
+
+              <select class="form-select" name="luckyNumber" id="luckyNumberSelect"  formControlName="period" >
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+              </select>
+            </div>
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form5Example1">Time Duration In Hours</label>
+              <input type="number" id="form5Example1" name="lotteryName" class="form-control"
+                formControlName="timeDuration" min="0" max="4" />
+            </div>
+          </div>
+          
+          <button type="button" class="btn btn-primary btn-block mb-4" (click)="addLottery()">Add</button>
+
+        </form>
+        <hr>
+
+      </div>
+    </div>
+  </div>
+  <div class="width-60">
+    <!-- my-table.component.html -->
+    <div class="table-container">
+      <table class="lottery-table">
+        <thead>
+          <tr>
+
+            <th>Lottery Name</th>
+            <th>Time</th>
+            <th>Total Lucky Numbers</th>
+            <th>Winning Return</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let lottery of allLottery">
+            <td>{{lottery.lotteryName}}</td>
+            <td>{{lottery.hours}} {{lottery.period}} </td>
+            <td>{{lottery.totalLuckyNumber}}</td>
+            <td>{{lottery.winingReturn}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.lottery-card {
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+  }
+  
+  .card-title {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    color: #343a40;
+  }
+  
+  .card-body {
+    transition: background-color 0.3s;
+  }
+  
+  .card-body:hover {
+    background-color: #e9ecef;
+  }
+  

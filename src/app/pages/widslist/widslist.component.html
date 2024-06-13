@@ -1,0 +1,21 @@
+<div class="table-container">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Lottery Name</th>
+          <th>Lucky Number</th>
+          <th>Amount</th>
+          <th>Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Angular ngFor loop to iterate over the data -->
+        <tr *ngFor="let item of allwids">
+          <td>{{ item.lotteryName }}</td>
+          <td>{{ item.lucky }}</td>
+          <td>{{ item.amount }}</td>
+          <td>{{ item.number }} ({{ item.name }})</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Lottery Data</h2>
+    <div *ngFor="let user of lotteryData" class="mb-4">
+      <h3>{{ user.name }} ({{ user.number }})</h3>
+      <div class="row">
+        <div class="col-md-3" *ngFor="let item of user.lotteryArrya">
+          <div class="card mb-3 shadow-sm lottery-card">
+            <div class="card-body">
+              <h5 class="card-title">{{ item.lottery.lotteryName }}</h5>
+              <p class="card-text"><strong>Lucky Number:</strong> {{ item.lucky }}</p>
+              <p class="card-text"><strong>Total Lucky Numbers:</strong> {{ item.lottery.totalLuckyNumber }}</p>
+              <p class="card-text"><strong>Winning Return:</strong> {{ item.lottery.winingReturn }}</p>
+              <p class="card-text"><strong>Time:</strong> {{ item.lottery.hours }}:{{ item.lottery.minutes }} {{ item.lottery.period }}</p>
+              <p class="card-text"><strong>Duration:</strong> {{ item.lottery.timeDuration }} hours</p>
+              <p class="card-text"><strong>Lottery ID:</strong> {{ item.lottery.lotteryId }}</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
