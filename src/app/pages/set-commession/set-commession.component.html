@@ -1,48 +1,77 @@
 <div class="row-self">
-    <div class="setting card">
-  
-            <div class="half">
-                <span class="nav-self" [ngClass]="{ 'active': isUserSetting }" (click)="userSetting()" >User</span>
-                <span class="nav-self" [ngClass]="{ 'active': isSmsSend }" (click)="sendSms()">Lottery</span>
-            </div>
-            <div class="content-body">
-               
-                <div *ngIf="isUserSetting">
-                    <div class="container mt-5">
-                        <div class="card">
-                          <h5 class="card-header bg-primary text-white">Commession</h5>
-                          <div class="card-body">
-                            <form (ngSubmit)="onSubmit()">
-                              <div class="form-group">
-                                <label for="luckyNumber">Choose a User</label>
-                                <select class="form-control" id="luckyNumber" name="luckyNumber" required  (change)="onSelectUser()">
-                                  <option value=""  >Select User</option>
-                                  <option value=""  >Distributor</option>
-                                  <option value=""  >User</option>
-                                  
-                                </select>
-                              </div>
-                              <div class="form-group">
-                                <label for="name">Enter Your Name</label>
-                                <input type="text" class="form-control" id="name"  name="name" required>
-                              </div>
-                              <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-                <div *ngIf="isSmsSend">
-                    
-                      
-                </div>
-                
-              
-            </div>
-   
+  <div class="setting card">
+
+    <div class="half">
+      <span class="nav-self" [ngClass]="{ 'active': isUserSetting }" (click)="userSetting()">User</span>
+      <span class="nav-self" [ngClass]="{ 'active': isSmsSend }" (click)="sendSms()">Lottery</span>
     </div>
-    <div class="body-main">
-       
-       
+    <div class="content-body">
+
+      <div *ngIf="isUserSetting">
+        <div class="container mt-5">
+          <div class="card">
+            <h5 class="card-header bg-primary text-white">Commession</h5>
+            <div class="card-body">
+              <form [formGroup]="info" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <label for="luckyNumber">Choose  Users</label>
+                  <select class="form-control" id="luckyNumber" name="luckyNumber" required (change)="onSelectUser()" formControlName="role">
+                    <option value="alluser">All Users</option>
+                    <option value="distributor">Distributor</option>
+                    <option value="user">User</option>
+                  </select>
+                </div>
+                <div class="form-group" *ngIf="usersData">
+                  <label for="users">Choose a User</label>
+                  <select class="form-control" id="users" name="users" required (change)="onSelectUser()" formControlName="user">
+                    <option value="0">Select User</option>
+                    <option value={{user.number}} *ngFor="let user of usersData">{{user.name}} {{user.number}}</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="name">Enter Commession</label>
+                  <input type="number" class="form-control" id="name" name="name" formControlName="commession" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="isSmsSend">
+
+
+      </div>
+
+
     </div>
+
+  </div>
+  <div class="body-main">
+<div>
+  <!-- commission-table.component.html -->
+<h2>Commission Data</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Role</th>
+      <th>Commission</th>
+      <th>Last Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of commissionData">
+      <td>{{ item.user }}</td>
+      <td>{{ item.role }}</td>
+      <td>{{ item.commession }}</td>
+      <td>{{ item.upadteAt | date:'medium' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+  </div>
 </div>

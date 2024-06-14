@@ -98,5 +98,16 @@ export class ApiService {
     return this.http.post(`${this.url}lottery/list/winner`, {}, { headers: this.getHeaders() })
   }
 
+  getAllUsersByRole(data:any): Observable<any> {
+    return this.http.post(`${this.url}user/get/users/role`, data, { headers: this.getHeaders() })
+  }
+
+  setCommession(data:any): Observable<any> {
+    return this.http.post(`${this.url}user/set/commession`, data, { headers: this.getHeaders() })
+  }
+
+  getCommession(): Observable<any> {
+    return this.http.post(`${this.url}user/view/commession`, {}, { headers: this.getHeaders() })
+  }
 
 }
