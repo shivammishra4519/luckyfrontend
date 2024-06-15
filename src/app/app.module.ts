@@ -24,6 +24,10 @@ import { CommonModule } from '@angular/common';
 import { WidsforuserComponent } from './pages/widsforuser/widsforuser.component';
 import { WinnerComponent } from './pages/winner/winner.component';
 import { SetCommessionComponent } from './pages/set-commession/set-commession.component';
+import { AddmoneyComponent } from './pages/addmoney/addmoney.component';
+import { PaymentsuccessComponent } from './pages/paymentsuccess/paymentsuccess.component';
+import { AddPayementGatwayApiComponent } from './pages/add-payement-gatway-api/add-payement-gatway-api.component';
+import { TransectionsComponent } from './pages/transections/transections.component';
 
 
 @NgModule({
@@ -46,6 +50,10 @@ import { SetCommessionComponent } from './pages/set-commession/set-commession.co
     WidsforuserComponent,
     WinnerComponent,
     SetCommessionComponent,
+    AddmoneyComponent,
+    PaymentsuccessComponent,
+    AddPayementGatwayApiComponent,
+    TransectionsComponent,
 
   ],
   imports: [

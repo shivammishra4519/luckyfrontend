@@ -1,0 +1,24 @@
+<!-- modal.component.html -->
+<div class="modal fade show" id="amountModal" tabindex="-1" role="dialog" aria-labelledby="amountModalLabel" aria-hidden="true" style="display:block;"  *ngIf="showModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="amountModalLabel">Fill Amount</h5>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input type="number" class="form-control" id="amount" [(ngModel)]="amount" name="amount" required>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="proceed()">Proceed</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-content" *ngIf="!showModal">
+    <!-- Your main page content here -->
+    <p>Main page content is hidden when the modal is shown.</p>
+  </div>
+  

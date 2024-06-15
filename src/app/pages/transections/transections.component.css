@@ -1,0 +1,39 @@
+/* transections.component.css */
+.transaction-table-container {
+    padding: 16px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  .transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  .transaction-table th, .transaction-table td {
+    padding: 8px 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .transaction-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .transaction-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .transaction-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .transaction-table tr.credited {
+    background-color: #d4edda; /* Light green background for credited transactions */
+  }
+  
+  .transaction-table tr.debited {
+    background-color: #f8d7da; /* Light red background for debited transactions */
+  }
+  

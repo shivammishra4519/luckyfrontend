@@ -66,4 +66,8 @@ role:any;
     this.jwtService.destroyToken()
     this.router.navigate(['/login'])
   }
+
+  addMoney(){
+    this.router.navigate(['/dashboard/add-money'], { queryParams: { openModal: true } });
+  }
 }

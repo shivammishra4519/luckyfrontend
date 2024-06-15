@@ -43,4 +43,13 @@ export class JwtService {
     }
     return null;
   }
+
+  getNumber(): string | null {
+    const token = this.getToken();
+    if (token) {
+      const decoded = this.decodeToken(token);
+      return decoded ? decoded.number : null;
+    }
+    return null;
+  }
 }

@@ -42,9 +42,16 @@
             <li *ngIf="role == 'admin'">
                 <a routerLink="/dashboard/set-commession">Commession</a>
             </li>
-            <li>
-               <button class="btn btn-primary" (click)="logout()">Logout</button>
+            <li *ngIf="role == 'admin'">
+                <a routerLink="/dashboard/add-api">API Setting</a>
             </li>
+            
+            <li>
+                <a routerLink="/dashboard/transections">Transections</a>
+            </li>
+            <li>
+                <button class="btn btn-primary" (click)="logout()">Logout</button>
+             </li>
         </ul>
         <div class="p-3">
             <div class="form-check form-switch">
@@ -61,7 +68,10 @@
             <nav class="wallet">
                 <span style="margin-right: 5px;" >&#8377;</span>
                 <span style="margin-right: 5px;"> {{wallet}}</span>
-               <button class="btn btn-outline-success">Add Money</button>
+                
+                    <button class="btn btn-outline-success" (click)="addMoney()">Add Money</button>
+
+                
             </nav>
           </header>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">

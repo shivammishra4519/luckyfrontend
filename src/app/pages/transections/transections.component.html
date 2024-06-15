@@ -1,0 +1,34 @@
+<!-- transections.component.html -->
+<div class="transaction-table-container">
+    <table class="transaction-table">
+      <thead>
+        <tr>
+            <th>S.N</th>
+          <th>Transaction ID</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th *ngIf="role === 'admin'">Sender ID</th>
+          <th *ngIf="role === 'admin'">Sender Opening</th>
+          <th *ngIf="role === 'admin'">Sender Closing</th>
+          <th *ngIf="role === 'admin'">Receiver ID</th>
+          <th>Opening</th>
+          <th>Closing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions; let i=index;" [ngClass]="{'credited': isCredited(transaction), 'debited': isDebited(transaction)}">
+            <td>{{i+1}}</td>
+          <td>{{ transaction.transactionId }}</td>
+          <td>{{ transaction.amount }}</td>
+          <td>{{ transaction.date | date: 'short' }}</td>
+          <td *ngIf="role === 'admin'">{{ transaction.senderId }}</td>
+          <td *ngIf="role === 'admin'">{{ transaction.senderOpening }}</td>
+          <td *ngIf="role === 'admin'">{{ transaction.senderClosing }}</td>
+          <td *ngIf="role === 'admin'">{{ transaction.receiverId }}</td>
+          <td>{{ (transaction.senderId === number) ? transaction.senderOpening : transaction.receiverOpening }}</td>
+          <td>{{ (transaction.senderId === number) ? transaction.senderClosing : transaction.receiverClosing }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -20,10 +20,15 @@ import { WidsforuserComponent } from './pages/widsforuser/widsforuser.component'
 import { WinnerComponent } from './pages/winner/winner.component';
 import { SetCommessionComponent } from './pages/set-commession/set-commession.component';
 import { adminAuthGuard } from './gaurd/admin-auth.guard';
+import { AddmoneyComponent } from './pages/addmoney/addmoney.component';
+import { PaymentsuccessComponent } from './pages/paymentsuccess/paymentsuccess.component';
+import { AddPayementGatwayApiComponent } from './pages/add-payement-gatway-api/add-payement-gatway-api.component';
+import { TransectionsComponent } from './pages/transections/transections.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'admin-registraion',component:AdminregisterComponent},
+  {path:'payment-success',component:PaymentsuccessComponent},
   // {path:'sidenav',component:SidenavComponent},
   {
     path:'dashboard',component:SidenavComponent,
@@ -40,6 +45,9 @@ const routes: Routes = [
       {path:'wid-list2',component:WidslistbynumComponent},
       {path:'wids-user',component:WidsforuserComponent},
       {path:'winner',component:WinnerComponent},
+      {path:'add-money',component:AddmoneyComponent},
+      {path:'add-api',component:AddPayementGatwayApiComponent},
+      {path:'transections',component:TransectionsComponent},
       {path:'set-commession',component:SetCommessionComponent,canActivate:[adminAuthGuard]},
       {path:'manage-lotery',component:LoteryComponent,
         canActivate:[adminAuthGuard]},

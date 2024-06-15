@@ -110,4 +110,28 @@ export class ApiService {
     return this.http.post(`${this.url}user/view/commession`, {}, { headers: this.getHeaders() })
   }
 
+  addMoney(data:any):Observable<any>{
+    return this.http.post(`${this.url}api/payment`, data, { headers: this.getHeaders() })
+  }
+
+
+  verifyPayment(data:any):Observable<any>{
+    return this.http.post(`${this.url}api/verfiy`, data, { headers: this.getHeaders() })
+  }
+
+  addToken(data:any):Observable<any>{
+    return this.http.post(`${this.url}api/token/add`, data, { headers: this.getHeaders() })
+  }
+
+  getToken():Observable<any>{
+    return this.http.post(`${this.url}api/token/get`, {}, { headers: this.getHeaders() })
+  }
+  deleteToken(data:any):Observable<any>{
+    return this.http.post(`${this.url}api/token/delete`, data, { headers: this.getHeaders() })
+  }
+
+  transections():Observable<any>{
+    return this.http.post(`${this.url}api/transectio/history`, {}, { headers: this.getHeaders() })
+  }
+
 }

@@ -1,0 +1,56 @@
+<div class="row-self">
+    <div class="setting card">
+
+        <div class="half">
+            <h2>ADD API</h2>
+        </div>
+        <div class="content-body">
+
+            <div>
+                <div class="container mt-5">
+                    <div class="card">
+                        <h5 class="card-header bg-primary text-white">Add Token</h5>
+                        <div class="card-body">
+                            <form (ngSubmit)="onSubmit()">
+                                
+                                <div class="form-group">
+                                    <label for="name">Enter User Token</label>
+                                    <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="token">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="body-main">
+        <div>
+            <!-- commission-table.component.html -->
+            <h2>Commission Data</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.N</th>
+                        <th>Token</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of tokenData; let i=index;">
+                        <td>{{ i+1 }}</td>
+                        <td>{{ item.token }}</td>
+                        <td>{{ item.date | date:'medium'  }}</td>
+                        <td><button class="btn btn-outline-danger" (click)="deleteToken(item)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
