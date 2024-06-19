@@ -1,86 +1,100 @@
-<link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />  
-<nav class="sidebar">
-      <header>
-        <div class="image-text">
-          <span class="image">
-            <img src="https://t4.ftcdn.net/jpg/04/06/91/91/240_F_406919147_D3WsGjwXj1qmFNrei2ZFvBWwiueRcFmg.jpg" alt="logo" />
-          </span>
-          <div class="text header-text">
-            <span class="main">Sidebar</span>
-            <span class="sub">Component</span>
-          </div>
-        </div>
-        <i class="bx bx-chevron-right toggle"></i>
-      </header>
+<header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Company name</a>
 
-      <div class="menu-bar">
-        <div class="menu">
-          <ul class="menu-links">
-            <li class="search-bar">
-              <i class="bx bx-search icons"></i>
-              <input type="search" placeholder="Search..." />
-            </li>
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-home-alt icons"></i>
-                <span class="text nav-text">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-bar-chart-alt-2 icons"></i>
-                <span class="text nav-text">Revenue</span>
-              </a>
-            </li>
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-bell icons"></i>
-                <span class="text nav-text">Notifications</span>
-              </a>
-            </li>
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-pie-chart-alt icons"></i>
-                <span class="text nav-text">Analytics</span>
-              </a>
-            </li>
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-heart icons"></i>
-                <span class="text nav-text">Likes</span>
-              </a>
-            </li>
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-wallet-alt icons"></i>
-                <span class="text nav-text">Wallets</span>
-              </a>
-            </li>
+  <ul class="navbar-nav flex-row d-md-none">
+    <li class="nav-item text-nowrap">
+      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="text-white fa-solid fa-bars">☰</i>
+      </button>
+    </li>
+  </ul>
+</header>
+
+<div class="wrapper container-fluid">
+  <div class="row">
+    <div class="sidebar col-md-3 col-lg-2 p-0 bg-dark">
+      <div class="offcanvas-md offcanvas-end bg-dark" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li>
+              <a class="nav-link link-light" routerLink="/dashboard/home">Home</a>
+          </li>
+          <li *ngIf="role == 'admin'">
+              <a class="nav-link link-light" routerLink="/dashboard/register-distributor">Register Distributor</a>
+          </li>
+          <li>
+              <a class="nav-link link-light" routerLink="/dashboard/register-user">Register User</a>
+          </li>
+          <li *ngIf="role == 'admin'">
+              <a class="nav-link link-light" routerLink="/dashboard/manage-lotery">Manage Lotery</a>
+          </li>
+          <li>
+              <a class="nav-link link-light" routerLink="/dashboard/user-list">User List</a>
+          </li>
+          <li *ngIf="role == 'admin'">
+              <a class="nav-link link-light" routerLink="/dashboard/distributor-list">Distributor List</a>
+          </li>
+          <li>
+              <a class="nav-link link-light" routerLink="/dashboard/wid">Wid</a>
+          </li>
+          <li>
+              <a class="nav-link link-light" routerLink="/dashboard/wid-list">Wids List</a>
+          </li>
+          <li>
+              <a class="nav-link link-light" routerLink="/dashboard/wid-list1">Wids</a>
+          </li>
+          <li>
+              <a class="nav-link link-light" routerLink="/dashboard/wids-user">Wids</a>
+          </li>
+          <li>
+              <a class="nav-link link-light"  routerLink="/dashboard/winner">Result</a>
+          </li>
+          <li *ngIf="role == 'admin'">
+              <a class="nav-link link-light" routerLink="/dashboard/set-commession">Commession</a>
+          </li>
+          <li *ngIf="role == 'admin'">
+              <a class="nav-link link-light" routerLink="/dashboard/add-api">API Setting</a>
+          </li>
+          <li *ngIf="role == 'admin'">
+              <a class="nav-link link-light" routerLink="/dashboard/transections-request">UPI Request</a>
+          </li>
+          
+          <li>
+              <a class="nav-link link-light" routerLink="/dashboard/transections">Transections</a>
+          </li>
+          <li>
+              <button class="btn btn-primary" (click)="logout()">Logout</button>
+           </li>
           </ul>
-        </div>
-
-        <div class="bottom-content">
-          <li class="nav-link">
-            <a href="#">
-              <i class="bx bx-log-out icons"></i>
-              <span class="text nav-text">Log Out</span>
+          <hr>
+          <div class="dropdown mt-auto">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+              <strong>mdo</strong>
             </a>
-          </li>
-          <li class="mode">
-            <div class="moon-sun">
-              <i class="bx bx-moon icons moon"></i>
-              <i class="bx bx-sun icons sun"></i>
-            </div>
-            <span class="mode-text text">Dark Mode</span>
-            <div class="toggle-switch">
-              <span class="switch"></span>
-            </div>
-          </li>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+
         </div>
       </div>
-    </nav>
+    </div>
 
-    
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="maincontent">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+</div>

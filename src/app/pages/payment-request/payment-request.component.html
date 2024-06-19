@@ -1,0 +1,25 @@
+<div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer Mobile</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.order_id }}</td>
+          <td>{{ order.customer_mobile }}</td>
+          <td>{{ order.amount }}</td>
+          <td>{{ order.date | date:'short' }}</td>
+          <td>{{ order.remark1 }}</td>
+          <td><button class="btn btn-primary" (click)="chechStatus(order)">Check Status</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

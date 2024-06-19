@@ -134,4 +134,11 @@ export class ApiService {
     return this.http.post(`${this.url}api/transectio/history`, {}, { headers: this.getHeaders() })
   }
 
+  onlinePaymentRequest():Observable<any>{
+    return this.http.post(`${this.url}api/request/payment`, {}, { headers: this.getHeaders() })
+  }
+  paymentStatus(data:any):Observable<any>{
+    return this.http.post(`${this.url}api/status/payment`, data, { headers: this.getHeaders() })
+  }
+
 }

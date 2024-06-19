@@ -24,6 +24,7 @@ import { AddmoneyComponent } from './pages/addmoney/addmoney.component';
 import { PaymentsuccessComponent } from './pages/paymentsuccess/paymentsuccess.component';
 import { AddPayementGatwayApiComponent } from './pages/add-payement-gatway-api/add-payement-gatway-api.component';
 import { TransectionsComponent } from './pages/transections/transections.component';
+import { PaymentRequestComponent } from './pages/payment-request/payment-request.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -31,7 +32,7 @@ const routes: Routes = [
   {path:'payment-success',component:PaymentsuccessComponent},
   // {path:'sidenav',component:SidenavComponent},
   {
-    path:'dashboard',component:SidenavComponent,
+    path:'dashboard',component:DashboardComponent,
     children:[
       {path:'home',component:HomeComponent},
       { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -48,13 +49,14 @@ const routes: Routes = [
       {path:'add-money',component:AddmoneyComponent},
       {path:'add-api',component:AddPayementGatwayApiComponent},
       {path:'transections',component:TransectionsComponent},
+      {path:'transections-request',component:PaymentRequestComponent},
       {path:'set-commession',component:SetCommessionComponent,canActivate:[adminAuthGuard]},
       {path:'manage-lotery',component:LoteryComponent,
         canActivate:[adminAuthGuard]},
     ],
     canActivate:[AuthGuard]
   },
- 
+//  {path:'nav',component:DashboardComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 
 ];

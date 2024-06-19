@@ -28,6 +28,7 @@ import { AddmoneyComponent } from './pages/addmoney/addmoney.component';
 import { PaymentsuccessComponent } from './pages/paymentsuccess/paymentsuccess.component';
 import { AddPayementGatwayApiComponent } from './pages/add-payement-gatway-api/add-payement-gatway-api.component';
 import { TransectionsComponent } from './pages/transections/transections.component';
+import { PaymentRequestComponent } from './pages/payment-request/payment-request.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { TransectionsComponent } from './pages/transections/transections.compone
     PaymentsuccessComponent,
     AddPayementGatwayApiComponent,
     TransectionsComponent,
+    PaymentRequestComponent,
 
   ],
   imports: [

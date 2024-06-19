@@ -11,8 +11,11 @@
           <th *ngIf="role === 'admin'">Sender Opening</th>
           <th *ngIf="role === 'admin'">Sender Closing</th>
           <th *ngIf="role === 'admin'">Receiver ID</th>
-          <th>Opening</th>
-          <th>Closing</th>
+          <th *ngIf="role === 'admin'">Receiver Opening</th>
+          <th *ngIf="role === 'admin'">Receiver Closing</th>
+          <th *ngIf="role !== 'admin'">Opening</th>
+          <th *ngIf="role !== 'admin'">Closing</th>
+          <th >Type</th>
         </tr>
       </thead>
       <tbody>
@@ -20,13 +23,16 @@
             <td>{{i+1}}</td>
           <td>{{ transaction.transactionId }}</td>
           <td>{{ transaction.amount }}</td>
-          <td>{{ transaction.date | date: 'short' }}</td>
+          <td>{{ transaction.date | date: 'medium' }}</td>
           <td *ngIf="role === 'admin'">{{ transaction.senderId }}</td>
           <td *ngIf="role === 'admin'">{{ transaction.senderOpening }}</td>
           <td *ngIf="role === 'admin'">{{ transaction.senderClosing }}</td>
           <td *ngIf="role === 'admin'">{{ transaction.receiverId }}</td>
-          <td>{{ (transaction.senderId === number) ? transaction.senderOpening : transaction.receiverOpening }}</td>
-          <td>{{ (transaction.senderId === number) ? transaction.senderClosing : transaction.receiverClosing }}</td>
+          <td *ngIf="role === 'admin'">{{ transaction.receiverOpening}}</td>
+          <td *ngIf="role === 'admin'">{{ transaction.receiverClosing }}</td>
+          <td *ngIf="role !== 'admin'">{{ (transaction.senderId === number) ? transaction.senderOpening : transaction.receiverOpening }}</td>
+          <td *ngIf="role !== 'admin'">{{ (transaction.senderId === number) ? transaction.senderClosing : transaction.receiverClosing }}</td>
+          <td>{{transaction.type || 'NA'}}</td>
         </tr>
       </tbody>
     </table>
