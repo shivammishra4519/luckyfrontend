@@ -1,14 +1,21 @@
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Company name</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white">Company name</a>
+  
 
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
-      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
+        aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <i class="text-white fa-solid fa-bars">☰</i>
       </button>
     </li>
   </ul>
 </header>
+<nav class="wallet">
+  <span style="margin-right: 5px;">&#8377;</span>
+  <span style="margin-right: 5px;color: white;"> {{wallet}}</span>
+  <img class="addmoney" src="../../../assets/plus-solid (2).svg" (click)="addMoney()" alt="" width="20px" height="20px">
+</nav>
 
 <div class="wrapper container-fluid">
   <div class="row">
@@ -16,63 +23,65 @@
       <div class="offcanvas-md offcanvas-end bg-dark" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu"
+            aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
           <ul class="nav nav-pills flex-column mb-auto">
             <li>
               <a class="nav-link link-light" routerLink="/dashboard/home">Home</a>
-          </li>
-          <li *ngIf="role == 'admin'">
+            </li>
+            <li *ngIf="role == 'admin'">
               <a class="nav-link link-light" routerLink="/dashboard/register-distributor">Register Distributor</a>
-          </li>
-          <li>
+            </li>
+            <li>
               <a class="nav-link link-light" routerLink="/dashboard/register-user">Register User</a>
-          </li>
-          <li *ngIf="role == 'admin'">
+            </li>
+            <li *ngIf="role == 'admin'">
               <a class="nav-link link-light" routerLink="/dashboard/manage-lotery">Manage Lotery</a>
-          </li>
-          <li>
+            </li>
+            <li>
               <a class="nav-link link-light" routerLink="/dashboard/user-list">User List</a>
-          </li>
-          <li *ngIf="role == 'admin'">
+            </li>
+            <li *ngIf="role == 'admin'">
               <a class="nav-link link-light" routerLink="/dashboard/distributor-list">Distributor List</a>
-          </li>
-          <li>
+            </li>
+            <li>
               <a class="nav-link link-light" routerLink="/dashboard/wid">Wid</a>
-          </li>
-          <li>
+            </li>
+            <li>
               <a class="nav-link link-light" routerLink="/dashboard/wid-list">Wids List</a>
-          </li>
-          <li>
+            </li>
+            <li>
               <a class="nav-link link-light" routerLink="/dashboard/wid-list1">Wids</a>
-          </li>
-          <li>
+            </li>
+            <li>
               <a class="nav-link link-light" routerLink="/dashboard/wids-user">Wids</a>
-          </li>
-          <li>
-              <a class="nav-link link-light"  routerLink="/dashboard/winner">Result</a>
-          </li>
-          <li *ngIf="role == 'admin'">
+            </li>
+            <li>
+              <a class="nav-link link-light" routerLink="/dashboard/winner">Result</a>
+            </li>
+            <li *ngIf="role == 'admin'">
               <a class="nav-link link-light" routerLink="/dashboard/set-commession">Commession</a>
-          </li>
-          <li *ngIf="role == 'admin'">
+            </li>
+            <li *ngIf="role == 'admin'">
               <a class="nav-link link-light" routerLink="/dashboard/add-api">API Setting</a>
-          </li>
-          <li *ngIf="role == 'admin'">
+            </li>
+            <li *ngIf="role == 'admin'">
               <a class="nav-link link-light" routerLink="/dashboard/transections-request">UPI Request</a>
-          </li>
-          
-          <li>
+            </li>
+
+            <li>
               <a class="nav-link link-light" routerLink="/dashboard/transections">Transections</a>
-          </li>
-          <li>
+            </li>
+            <li>
               <button class="btn btn-primary" (click)="logout()">Logout</button>
-           </li>
+            </li>
           </ul>
           <hr>
           <div class="dropdown mt-auto">
-            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+              id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
               <strong>mdo</strong>
             </a>

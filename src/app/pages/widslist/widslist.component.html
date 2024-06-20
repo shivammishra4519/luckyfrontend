@@ -2,6 +2,7 @@
     <table class="data-table">
       <thead>
         <tr>
+          <th>S.N</th>
           <th>Lottery Name</th>
           <th>Lucky Number</th>
           <th>Amount</th>
@@ -10,7 +11,8 @@
       </thead>
       <tbody>
         <!-- Angular ngFor loop to iterate over the data -->
-        <tr *ngFor="let item of allwids">
+        <tr *ngFor="let item of allwids; let i=index">
+          <td>{{i}}</td>
           <td>{{ item.lotteryName }}</td>
           <td>{{ item.lucky }}</td>
           <td>{{ item.amount }}</td>

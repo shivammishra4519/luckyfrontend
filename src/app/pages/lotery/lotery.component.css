@@ -1,41 +1,42 @@
 .row-self {
-    width: 100%;
-    display: flex;
-    overflow: hidden;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
 }
 
 .width-40 {
-    width: 35%;
+  width: 35%;
 
-    border: 1px solid grey;
-    height: 94vh;
+  border: 1px solid grey;
+  height: 94vh;
 }
 
 .width-60 {
-    width: 65%;
+  width: 65%;
 
-    border: 1px solid rgb(112, 54, 54);
-    height: 94vh;
+  border: 1px solid rgb(112, 54, 54);
+  height: 94vh;
 }
 
 ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
-.header{
-    padding: 2px 7px;
+.header {
+  padding: 2px 7px;
 }
 
 ul li {
-    width: 49%;
-    border: 1px solid red;
-    list-style: none;
-    display: inline-block;
-    padding: 0px 20px;
+  width: 49%;
+  border: 1px solid red;
+  list-style: none;
+  display: inline-block;
+  padding: 0px 20px;
 }
-.card{
-    padding: 10px 40px;
+
+.card {
+  padding: 10px 40px;
 }
 
 
@@ -53,7 +54,8 @@ ul li {
   text-align: left;
 }
 
-.lottery-table th, .lottery-table td {
+.lottery-table th,
+.lottery-table td {
   padding: 12px 15px;
   border: 1px solid #ddd;
 }
@@ -82,17 +84,25 @@ ul li {
 }
 
 @media (max-width: 767px) {
-  .row-self{
+  .row-self {
     flex-wrap: wrap;
+   overflow: auto;
+    padding: 0px;
+    margin: 0px;
   }
-  .width-40{
+
+  .width-40 {
     width: 100%;
+    height: min-content;
+    padding: 0px;
+    margin: 0px;
   }
-  .width-60{
+
+  .width-60 {
     width: 100%;
+    margin-bottom: 10px;
+    /* height: min-content; */
   }
+
+
 }
-
-
-
-
