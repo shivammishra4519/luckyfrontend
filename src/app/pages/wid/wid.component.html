@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 45px;">
-  <div *ngFor="let lottery of currentLottery">
+  <div *ngFor="let lottery of allLottery">
     <div class="marquee">
       <div class="marquee-content">
         This is a scrolling text example using CSS animations. You can add more content here as needed.
@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <div class="row" *ngIf="selectedItems">
+  <div class="row" *ngIf="isDataAvailable">
     <div class="col-md-8">
       <input type="number" class="form-control" id="inputField" placeholder="Enter Amount" min="0"  [(ngModel)]="amount">
     </div>
@@ -33,4 +33,8 @@
       <button type="button" class="btn btn-primary" id="submitButton" (click)="submit()">Submit</button>
     </div>
   </div>
+</div>
+
+<div *ngIf="!isDataAvailable">
+  <h1  style="text-align: center; text-transform:uppercase; color: rgb(10, 99, 29);">No wid At this time</h1>
 </div>

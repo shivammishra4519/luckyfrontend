@@ -15,11 +15,11 @@ export class LoteryComponent {
   constructor(private service: ApiService, private builder: FormBuilder) {
     service.getAllLottery().subscribe(res => {
       this.allLottery = res;
-      console.log(res)
+      
     })
     service.findLotteryStatus().subscribe(res => {
       this.lotteries = res;
-      console.log(res)
+      
     })
   }
 
@@ -27,10 +27,10 @@ export class LoteryComponent {
     lotteryName: this.builder.control('', Validators.required),
     totalLuckyNumber: this.builder.control('', Validators.required),
     winingReturn: this.builder.control('', Validators.required),
-    hours:this.builder.control(12,Validators.required),
-    minutes:this.builder.control(0,Validators.required),
-    period:this.builder.control('AM',Validators.required),
-    timeDuration:this.builder.control('',Validators.required)
+    hours: this.builder.control(12, Validators.required),
+    minutes: this.builder.control(0, Validators.required),
+    period: this.builder.control('AM', Validators.required),
+    timeDuration: this.builder.control('', Validators.required)
   })
 
   addLottery() {
@@ -85,6 +85,32 @@ export class LoteryComponent {
     return investmentNumber;
   }
 
- 
+
+  upadteStatus(data: any) {
+   
+    data.lottery.status = data.status;
+    this.service.updateStatus(data.lottery).subscribe({
+      next: data => {
+        this.service.getAllLottery().subscribe(res => {
+          this.allLottery = res;
+          
+        })
+        Swal.fire({
+          title: "Good job!",
+          text: "status update!",
+          icon: "success"
+        });
+      },
+      error: err => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${err.error.message}`,
+          
+        });
+      }
+    })
+  }
+
 }
 

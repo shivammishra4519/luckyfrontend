@@ -98,6 +98,13 @@ export class ApiService {
     return this.http.post(`${this.url}lottery/list/winner`, {}, { headers: this.getHeaders() })
   }
 
+  updateStatus(data:any): Observable<any> {
+    return this.http.post(`${this.url}lottery/update/status`, data, { headers: this.getHeaders() })
+  }
+
+  getAllCurrentLotterry(): Observable<any> {
+    return this.http.post(`${this.url}lottery/allruning/lottery`, {}, { headers: this.getHeaders() })
+  }
   getAllUsersByRole(data:any): Observable<any> {
     return this.http.post(`${this.url}user/get/users/role`, data, { headers: this.getHeaders() })
   }
@@ -137,6 +144,7 @@ export class ApiService {
   onlinePaymentRequest():Observable<any>{
     return this.http.post(`${this.url}api/request/payment`, {}, { headers: this.getHeaders() })
   }
+
   paymentStatus(data:any):Observable<any>{
     return this.http.post(`${this.url}api/status/payment`, data, { headers: this.getHeaders() })
   }

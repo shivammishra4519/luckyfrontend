@@ -10,42 +10,33 @@ import Swal from 'sweetalert2';
 })
 export class WidComponent implements OnInit {
   allLottery: any;
-  currentLottery: any = [];
+  
   selectedItems: SelectedItem[] = [];
-  amount = 0;
-  length = this.currentLottery.length;
+  amount :any;
+isDataAvailable=false;
 
   constructor(private service: ApiService, private builder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.service.getAllLottery().subscribe(res => {
-      this.allLottery = res;
-      console.log(res);
-      this.seduleLottery();
+    this.service.getAllCurrentLotterry().subscribe({
+      next:data=>{
+        this.allLottery = data;
+        if(data.length <=0){
+          this.isDataAvailable= false;
+        }else{
+          this.isDataAvailable=true
+        }
+     
+      },error:err=>{
+        this.isDataAvailable= false;
+      }
     });
 
     const time = new Date();
-    console.log(time.getMinutes());
+   
   }
 
-  seduleLottery() {
-    for (let lottery of this.allLottery) {
-      const startTime = lottery.hours;
-      const period = lottery.period;
-      const timeDuration = lottery.timeDuration;
-      const date = new Date();
-      const getHours = date.getHours();
-      let currentPeriod = 'AM';
-      let currentTime = getHours;
-      if (getHours > 12) {
-        currentPeriod = 'PM';
-        currentTime = getHours - 12;
-      }
-      if (currentTime === startTime && currentPeriod === period) {
-        this.currentLottery.push(lottery);
-      }
-    }
-  }
+ 
 
   onItemClick(lucky: string, lottery: any) {
     const index = this.selectedItems.findIndex(item => item.lucky === lucky && item.lotteryId === lottery.lotteryId);
@@ -111,6 +102,8 @@ export class WidComponent implements OnInit {
       }
     });
   }
+
+  
 }
 
 interface SelectedItem {

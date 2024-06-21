@@ -66,6 +66,8 @@
             <th>Time</th>
             <th>Total Lucky Numbers</th>
             <th>Winning Return</th>
+            <th>Update At</th>
+            <th>Action</th>
 
           </tr>
         </thead>
@@ -75,6 +77,10 @@
             <td>{{lottery.hours}} {{lottery.period}} </td>
             <td>{{lottery.totalLuckyNumber}}</td>
             <td>{{lottery.winingReturn}}</td>
+            <td>{{lottery.updateAt | date:'medium'}}</td>
+            <td><button class="btn btn-success" (click)="upadteStatus({lottery,status:true})" *ngIf="!lottery.status" >On</button>
+              <button class="btn btn-danger" (click)="upadteStatus({lottery,status:false})" *ngIf="lottery.status">Off</button>
+            </td>
           </tr>
         </tbody>
       </table>
