@@ -1,5 +1,7 @@
 .container {
   margin-top: 45px;
+  max-height: 80vh; /* Adjust as needed */
+  /* overflow-y: auto; */
 }
 
 .card {
@@ -13,6 +15,8 @@
   display: flex;
   border: 1px solid grey;
   flex-wrap: wrap;
+  /* overflow-y: auto; */
+  max-height: min-content; /* Adjust as needed */
 }
 
 .item {
@@ -30,19 +34,23 @@
 }
 
 .item.odd {
-  background-color: #cf8383;
+  background-color: #FF6F00;
+    color: white;
 }
 
 .item.even {
-  background-color: #8383cf;
+  background-color: #0707d2;
+  color: #FDD835;
 }
 
 .item.third {
-  background-color: #83cf83;
+  background-color: #0fbf0f;
+  color: #f2f9ff;
 }
 
 .item.fourth {
-  background-color: #cf83cf;
+  background-color: #a901a9;
+  color: #E0F7FA;
 }
 
 .item.selected {
@@ -73,7 +81,6 @@
   100% { transform: translateX(-100%); }
 }
 
-
 #inputField {
   height: 45px;
   font-size: 16px;
@@ -84,13 +91,23 @@
   font-size: 16px;
   width: 100%;
 }
+
 @media only screen and (max-width: 767px) {
-  body {
-    background-color: lightblue;
-  }
-  .item{
-    width: 45px;
-    height: 45px;
+  .item {
+    width: 56px;
+    height: 50px;
     font-size: 25px;
+  }
+
+  .container {
+    overflow-y: auto;
+  }
+
+  .item-1 {
+    /* overflow-y: auto; */
+  }
+  .card{
+    padding: 0px;
+    margin: 0px;
   }
 }

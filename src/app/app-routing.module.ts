@@ -25,6 +25,7 @@ import { PaymentsuccessComponent } from './pages/paymentsuccess/paymentsuccess.c
 import { AddPayementGatwayApiComponent } from './pages/add-payement-gatway-api/add-payement-gatway-api.component';
 import { TransectionsComponent } from './pages/transections/transections.component';
 import { PaymentRequestComponent } from './pages/payment-request/payment-request.component';
+import { AddBankComponent } from './pages/add-bank/add-bank.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -50,6 +51,7 @@ const routes: Routes = [
       {path:'add-api',component:AddPayementGatwayApiComponent},
       {path:'transections',component:TransectionsComponent},
       {path:'transections-request',component:PaymentRequestComponent},
+      {path:'add-account',component:AddBankComponent},
       {path:'set-commession',component:SetCommessionComponent,canActivate:[adminAuthGuard]},
       {path:'manage-lotery',component:LoteryComponent,
         canActivate:[adminAuthGuard]},

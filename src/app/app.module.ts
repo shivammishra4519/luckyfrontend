@@ -29,6 +29,7 @@ import { PaymentsuccessComponent } from './pages/paymentsuccess/paymentsuccess.c
 import { AddPayementGatwayApiComponent } from './pages/add-payement-gatway-api/add-payement-gatway-api.component';
 import { TransectionsComponent } from './pages/transections/transections.component';
 import { PaymentRequestComponent } from './pages/payment-request/payment-request.component';
+import { AddBankComponent } from './pages/add-bank/add-bank.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { PaymentRequestComponent } from './pages/payment-request/payment-request
     AddPayementGatwayApiComponent,
     TransectionsComponent,
     PaymentRequestComponent,
+    AddBankComponent,
 
   ],
   imports: [

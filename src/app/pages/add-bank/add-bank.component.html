@@ -1,0 +1,36 @@
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="form-container mt-5 p-4 bg-white rounded shadow">
+          <h2 class="text-center mb-4">Add Bank Account</h2>
+          <form [formGroup]="bankAccountForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="accountHolderName" class="form-label">Account Holder Name</label>
+              <input type="text" formControlName="accountHolderName" class="form-control" id="accountHolderName" placeholder="Enter account holder name">
+            </div>
+            <div class="mb-3">
+              <label for="bankName" class="form-label">Bank Name</label>
+              <input type="text" formControlName="bankName" class="form-control" id="bankName" placeholder="Enter bank name">
+            </div>
+            <div class="mb-3">
+              <label for="accountNumber" class="form-label">Account Number</label>
+              <input type="text" formControlName="accountNumber" class="form-control" id="accountNumber" placeholder="Enter account number">
+            </div>
+            <div class="mb-3">
+              <label for="ifscCode" class="form-label">IFSC Code</label>
+              <input type="text" formControlName="ifscCode" class="form-control" id="ifscCode" placeholder="Enter IFSC code">
+            </div>
+            <div class="mb-3">
+              <label for="branchName" class="form-label">Branch Name</label>
+              <input type="text" formControlName="branchName" class="form-control" id="branchName" placeholder="Enter branch name">
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary" [disabled]="bankAccountForm.invalid">Add Bank Account</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
