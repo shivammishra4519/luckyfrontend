@@ -37,4 +37,34 @@ export class WalletService {
     return this.http.post(`${this.url}wallet/verifiy`, {}, { headers: this.getHeaders() });
   }
 
+  registerRemitter(): Observable<any> {
+    return this.http.post(`${this.url}wallet/register`, {}, { headers: this.getHeaders() });
+  }
+
+  verfiyOtp(data:any): Observable<any> {
+    return this.http.post(`${this.url}wallet/verifiyOtp`, data, { headers: this.getHeaders() });
+  }
+
+  getAllBank(): Observable<any> {
+    return this.http.post(`${this.url}wallet/getAllBank`, {}, { headers: this.getHeaders() });
+  }
+
+  addBankAccount(data:any): Observable<any> {
+    return this.http.post(`${this.url}wallet/addaccount`, data, { headers: this.getHeaders() });
+  }
+  getaccounts(): Observable<any> {
+    return this.http.post(`${this.url}wallet/getaccount`, {}, { headers: this.getHeaders() });
+  }
+  withDRaw(data:any): Observable<any> {
+    return this.http.post(`${this.url}wallet/withdram`, data, { headers: this.getHeaders() });
+  }
+
+  withDrawHistory(): Observable<any> {
+    return this.http.post(`${this.url}wallet/histroy`, {}, { headers: this.getHeaders() });
+  }
+
+  checkStatus(data:any): Observable<any> {
+    return this.http.post(`${this.url}wallet/statuscheck`, data, { headers: this.getHeaders() });
+  }
+
 }

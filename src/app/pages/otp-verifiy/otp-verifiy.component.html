@@ -1,0 +1,16 @@
+<!-- otp.component.html -->
+<div class="otp-container">
+    <h2>Enter OTP</h2>
+    <div class="otp-inputs">
+      <input type="text" maxlength="1" class="otp-input" (input)="onInputChange($event, 0)" [(ngModel)]="otp[0]">
+      <input type="text" maxlength="1" class="otp-input" (input)="onInputChange($event, 1)" [(ngModel)]="otp[1]">
+      <input type="text" maxlength="1" class="otp-input" (input)="onInputChange($event, 2)" [(ngModel)]="otp[2]">
+      <input type="text" maxlength="1" class="otp-input" (input)="onInputChange($event, 3)" [(ngModel)]="otp[3]">
+    </div>
+    <button (click)="verifyOtp()" [disabled]="!isOtpComplete()">Verify OTP</button>
+    <div class="resend-container">
+      <span *ngIf="timeLeft > 0">Resend OTP in {{ timeLeft }}s</span>
+      <button *ngIf="timeLeft === 0" (click)="resendOtp()">Resend OTP</button>
+    </div>
+  </div>
+  

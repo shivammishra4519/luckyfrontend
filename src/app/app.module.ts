@@ -30,6 +30,9 @@ import { AddPayementGatwayApiComponent } from './pages/add-payement-gatway-api/a
 import { TransectionsComponent } from './pages/transections/transections.component';
 import { PaymentRequestComponent } from './pages/payment-request/payment-request.component';
 import { AddBankComponent } from './pages/add-bank/add-bank.component';
+import { OtpVerifiyComponent } from './pages/otp-verifiy/otp-verifiy.component';
+import { WithdrawComponent } from './pages/withdraw/withdraw.component';
+import { WithdrawhistoryComponent } from './pages/withdrawhistory/withdrawhistory.component';
 
 
 @NgModule({
@@ -58,6 +61,9 @@ import { AddBankComponent } from './pages/add-bank/add-bank.component';
     TransectionsComponent,
     PaymentRequestComponent,
     AddBankComponent,
+    OtpVerifiyComponent,
+    WithdrawComponent,
+    WithdrawhistoryComponent,
 
   ],
   imports: [

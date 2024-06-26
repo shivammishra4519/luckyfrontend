@@ -1,0 +1,52 @@
+<body>
+    
+    <div class="transaction-table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Bank Name</th>
+                    <th>Mode</th>
+                    <th>User ID</th>
+                    <th>Transaction ID</th>
+                    <th>Account No</th>
+                    <th>Amount</th>
+                    <th>API Order ID</th>
+                    <th>IFSC Code</th>
+                    <th>Message</th>
+                    <th>Remaining Balance</th>
+                    <th>RRN</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of transactionData; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ item.BankName }}</td>
+                    <td>{{ item.Mode }}</td>
+                    <td>{{ item.Senderno }}</td>
+                    <td>{{ item.Transid }}</td>
+                    <td>{{ item.accountno }}</td>
+                    <td>{{ item.amount }}</td>
+                    <td>{{ item.apiOrderId }}</td>
+                    <td>{{ item.ifsccode }}</td>
+                    <td>{{ item.message }}</td>
+                    <td>{{ item.remainingBalance }}</td>
+                    <td>{{ item.rrn }}</td>
+                    <td [ngClass]="{
+                        'status-success': item.status === 'Success',
+                        'status-failed': item.status === 'Failed'
+                    }">
+                        <span *ngIf="item.status === 'Success'">Success</span>
+                        <span *ngIf="item.status === 'Failed'">Failed</span>
+                        <span *ngIf="item.status === 'Pending'">
+                            Pending
+                            <button class="btn btn-primary" (click)="checkStatus(item)">Check Status</button>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>

@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container" *ngIf="isNUmberVerifyed">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="form-container mt-5 p-4 bg-white rounded shadow">
@@ -10,8 +10,12 @@
               <input type="text" formControlName="accountHolderName" class="form-control" id="accountHolderName" placeholder="Enter account holder name">
             </div>
             <div class="mb-3">
-              <label for="bankName" class="form-label">Bank Name</label>
-              <input type="text" formControlName="bankName" class="form-control" id="bankName" placeholder="Enter bank name">
+              <label for="bankName" class="form-label">Select Bank </label>
+              <select class="form-control" id="luckyNumber" name="luckyNumber" required  formControlName="originalifsccode">
+                <option value="0">Select Bank</option>
+                <option  *ngFor="let bank of AllBank" value={{bank.branch_ifsc}}>{{bank.bank_name}}</option>
+               
+              </select>
             </div>
             <div class="mb-3">
               <label for="accountNumber" class="form-label">Account Number</label>
@@ -26,7 +30,7 @@
               <input type="text" formControlName="branchName" class="form-control" id="branchName" placeholder="Enter branch name">
             </div>
             <div class="d-grid">
-              <button type="submit" class="btn btn-primary" [disabled]="bankAccountForm.invalid">Add Bank Account</button>
+              <button type="submit" class="btn btn-primary" >Add Bank Account</button>
             </div>
           </form>
         </div>
@@ -34,3 +38,7 @@
     </div>
   </div>
   
+<div *ngIf="!isNUmberVerifyed">
+
+  <app-otp-verifiy></app-otp-verifiy>
+</div>
