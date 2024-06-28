@@ -25,5 +25,5 @@ body.dark-mode {
   }
   
  body{
-  overflow: auto;
+  overflow: hidden;
  }
