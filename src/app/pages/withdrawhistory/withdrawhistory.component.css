@@ -4,9 +4,7 @@
   margin: 20px;
 } */
 body {
-  /* overflow-x: hidden; */
-  /* overflow-y: auto;
-  height: 90vh; */
+ 
   margin: 20px;
 }
 
@@ -47,4 +45,12 @@ tbody tr:last-of-type {
 
 .status-failed {
   color: red;
+}
+
+
+.transaction-table-container{
+  width: 100%;
+  /* max-height: 98vh; */
+  /* overflow: auto; */
+  overflow-x: auto;
 }
