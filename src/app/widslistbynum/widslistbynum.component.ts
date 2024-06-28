@@ -23,6 +23,7 @@ export class WidslistbynumComponent {
           this.winingReturn=data.winingReturn;
 
         }, error: err => {
+          console.log(err)
           Swal.fire({
             icon: "error",
             title: "Oops...",

@@ -14,7 +14,6 @@
               <select class="form-control" id="luckyNumber" name="luckyNumber" required  formControlName="originalifsccode">
                 <option value="0">Select Bank</option>
                 <option  *ngFor="let bank of AllBank" value={{bank.branch_ifsc}}>{{bank.bank_name}}</option>
-               
               </select>
             </div>
             <div class="mb-3">

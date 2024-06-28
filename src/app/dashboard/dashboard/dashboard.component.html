@@ -49,13 +49,13 @@
             <li>
               <a class="nav-link link-light" routerLink="/dashboard/wid">Wid</a>
             </li>
-            <li>
+            <li  *ngIf="role == 'admin'">
               <a class="nav-link link-light" routerLink="/dashboard/wid-list">Wids List</a>
             </li>
-            <li>
+            <li  *ngIf="role == 'admin'">
               <a class="nav-link link-light" routerLink="/dashboard/wid-list1">Wids</a>
             </li>
-            <li>
+            <li  *ngIf="role == 'admin'">
               <a class="nav-link link-light" routerLink="/dashboard/wids-user">Wids</a>
             </li>
             <li>

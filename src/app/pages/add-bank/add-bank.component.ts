@@ -36,27 +36,27 @@ export class AddBankComponent {
   }
 
   onSubmit(): void {
-    // this.service.verifyNumber().subscribe({
-    //   next: data => {
+    this.service.verifyNumber().subscribe({
+      next: data => {
 
-    //     if (!data) {
+        if (!data) {
 
-    //       this.service.registerRemitter().subscribe({
-    //         next: data => {
-    //           console.log(data)
-    //         },
-    //         error: err => {
-    //           console.log(err)
-    //         }
-    //       })
-    //       this.isNUmberVerifyed = false
-    //     }
-    //     else{
+          this.service.registerRemitter().subscribe({
+            next: data => {
+              console.log(data)
+            },
+            error: err => {
+              console.log(err)
+            }
+          })
+          this.isNUmberVerifyed = false
+        }
+        else{
           
-    //     }
-    //   }
-    // }
-    // )
+        }
+      }
+    }
+    )
    
     const ifscCode=this.bankAccountForm.value.originalifsccode;
           const obj=this.filterBanksByIFSC(ifscCode);
