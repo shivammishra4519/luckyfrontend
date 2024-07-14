@@ -38,7 +38,13 @@ export class LoginComponent {
         });
         this.router.navigate(['/dashboard'])
       },error:err=>{
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${err.error.message}`,
+        });
         console.log(err)
+
       }
     })
   }

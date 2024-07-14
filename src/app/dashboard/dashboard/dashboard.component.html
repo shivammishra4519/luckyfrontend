@@ -67,8 +67,13 @@
             <li *ngIf="role == 'admin'">
               <a class="nav-link link-light" routerLink="/dashboard/add-api">API Setting</a>
             </li>
+
             <li *ngIf="role == 'admin'">
               <a class="nav-link link-light" routerLink="/dashboard/transections-request">UPI Request</a>
+            </li>
+
+            <li *ngIf="role == 'admin'">
+              <a class="nav-link link-light" routerLink="/dashboard/notfications">Manage Notifections</a>
             </li>
 
             <li>

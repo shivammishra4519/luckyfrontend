@@ -149,4 +149,21 @@ export class ApiService {
     return this.http.post(`${this.url}api/status/payment`, data, { headers: this.getHeaders() })
   }
 
+
+  saveNotification(data:any):Observable<any>{
+    return this.http.post(`${this.url}notification/save`, data, { headers: this.getHeaders() })
+  }
+
+  getAllNotification():Observable<any>{
+    return this.http.post(`${this.url}notification/getallnotification`, {}, { headers: this.getHeaders() })
+  }
+  updateStausNotification(data:any):Observable<any>{
+    return this.http.post(`${this.url}notification/updatestatus`, data, { headers: this.getHeaders() })
+  }
+
+  getActiveNotification():Observable<any>{
+    return this.http.post(`${this.url}notification/active`, {}, { headers: this.getHeaders() })
+  }
+
+
 }

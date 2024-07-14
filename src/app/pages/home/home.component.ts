@@ -10,43 +10,19 @@ import Swal from 'sweetalert2';
 })
 
 export class HomeComponent {
-  // decodedData: any
-  // data: any;
-  // constructor(private route: ActivatedRoute, private service: ApiService) { }
-  // num = 1;
-  // ngOnInit(): void {
+  notifications: any[] = [];
 
+  constructor(private service: ApiService) {}
 
-  //   this.route.queryParams.subscribe(params => {
-
-
-  //     if (params['data']) {
-
-  //       this.decodedData = params;
-  //       const decodedString = atob(this.decodedData.data);
-  //       this.data = JSON.parse(decodedString);
-  //     }
-  //   });
-  //   this.callApi()
-  // }
-
-
-  // callApi() {
-  //   this.service.verifyPayment(this.data).subscribe({
-  //     next: data => {
-  //       Swal.fire({
-  //         title: "Good job!",
-  //         text: "Money Added SuccessFully!",
-  //         icon: "success"
-  //       });
-  //     }, error: err => {
-  //       Swal.fire({
-  //         icon: "error",
-  //         title: "Oops...",
-  //         text: "Something went wrong Contact to admin!",
-          
-  //       });
-  //     }
-  //   })
-  // }
+  ngOnInit() {
+    this.service.getActiveNotification().subscribe({
+      next: data => {
+        this.notifications = data;
+        console.log(data);
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
+  }
 }

@@ -1,0 +1,67 @@
+<div class="row-self">
+    <div class="setting card">
+
+        <div class="half">
+            <h2>ADD MESSAGE</h2>
+        </div>
+        <div class="content-body">
+
+            <div>
+                <div class="container mt-5">
+                    <div class="card">
+                        <h5 class="card-header bg-primary text-white">Add Message</h5>
+                        <div class="card-body">
+                            <form (ngSubmit)="onSubmit()">
+
+                                <div class="form-group">
+                                    <label for="name">Enter Type</label>
+                                    <input type="text" class="form-control" id="name" name="name" required placeholder="Enter Type" style="text-transform: uppercase;" [(ngModel)]="type">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Enter Message</label>
+                                    <textarea name="example" rows="4" cols="40"  [(ngModel)]="message">
+                                        </textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="body-main">
+        <div>
+            <!-- commission-table.component.html -->
+            <h2>Notifictions Data</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.N</th>
+                        <th>Type</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of messageData; let i=index;">
+                        <td>{{ i+1 }}</td>
+                        <td>{{ item.type }}</td>
+                        <td>{{ item.message }}</td>
+                        <td>{{ item.date | date:'medium' }}</td>
+                        <td><button class="btn btn-success" (click)="upadteStatus({item,status:true})" *ngIf="!item.status" >On</button>
+                            <button class="btn btn-danger" (click)="upadteStatus({item,status:false})" *ngIf="item.status">Off</button>
+                          </td>
+                        <td><button class="btn btn-outline-danger" (click)="deleteToken(item)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>

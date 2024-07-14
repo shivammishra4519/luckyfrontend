@@ -28,6 +28,7 @@ import { PaymentRequestComponent } from './pages/payment-request/payment-request
 import { AddBankComponent } from './pages/add-bank/add-bank.component';
 import { WithdrawComponent } from './pages/withdraw/withdraw.component';
 import { WithdrawhistoryComponent } from './pages/withdrawhistory/withdrawhistory.component';
+import { NotficationsComponent } from './pages/notfications/notfications.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -56,6 +57,7 @@ const routes: Routes = [
       {path:'add-account',component:AddBankComponent},
       {path:'widdraw',component:WithdrawComponent},
       {path:'widdraw-history',component:WithdrawhistoryComponent},
+      {path:'notfications',component:NotficationsComponent},
       {path:'set-commession',component:SetCommessionComponent,canActivate:[adminAuthGuard]},
       {path:'manage-lotery',component:LoteryComponent,
         canActivate:[adminAuthGuard]},

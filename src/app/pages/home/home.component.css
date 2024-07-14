@@ -1,0 +1,25 @@
+.notifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between notification boxes */
+    padding: 10px;
+   
+  }
+  
+  .notification-box {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2px solid #000; /* Customize border color */
+    padding: 25px 10px; /* Add padding */
+    background-color: #f8f8f8; /* Customize background color */
+    border-radius: 20px;
+  }
+  
+  .marquee {
+    display: block;
+    font-size: 18px; /* Customize font size */
+    color: #333; /* Customize text color */
+    white-space: nowrap;
+  }
+  
